@@ -1,6 +1,6 @@
 package fr.univaix.iut.cas2.dao;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface DAO<T, ID> {
 
@@ -16,7 +16,7 @@ public interface DAO<T, ID> {
 	 * 
 	 * @return
 	 */
-	public List<T> FindAll();
+	public Collection<T> findAll();
 
 	/**
 	 * Permet de récupérer un objet via son ID
