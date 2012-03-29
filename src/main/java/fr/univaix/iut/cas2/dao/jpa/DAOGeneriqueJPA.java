@@ -21,7 +21,8 @@ public abstract class DAOGeneriqueJPA<T, ID> implements DAO<T, ID> {
 	@SuppressWarnings("unchecked")
 	public DAOGeneriqueJPA(EntityManager entityManager) {
 		this.entityManager = entityManager;
-		this.entityClass = ((Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
+		this.entityClass = ((Class<T>) ((ParameterizedType) getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0]);
 
 		Annotation[] annotations = entityClass.getAnnotations();
 		for (Annotation annotation : annotations) {
@@ -51,8 +52,9 @@ public abstract class DAOGeneriqueJPA<T, ID> implements DAO<T, ID> {
 
 	@Override
 	public List<T> findAll() {
-        TypedQuery<T> query = entityManager.createQuery("select E from " + entityName + " E where 1 = 1",entityClass);
-        return query.getResultList();
+		TypedQuery<T> query = entityManager.createQuery("select E from "
+				+ entityName + " E where 1 = 1", entityClass);
+		return query.getResultList();
 	}
 
 	@Override
