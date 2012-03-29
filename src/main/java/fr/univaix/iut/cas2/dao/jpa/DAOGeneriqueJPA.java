@@ -2,7 +2,7 @@ package fr.univaix.iut.cas2.dao.jpa;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
@@ -50,7 +50,7 @@ public abstract class DAOGeneriqueJPA<T, ID> implements DAO<T, ID> {
 	}
 
 	@Override
-	public Collection<T> findAll() {
+	public List<T> findAll() {
         TypedQuery<T> query = entityManager.createQuery("select E from " + entityName + " E where 1 = 1",entityClass);
         return query.getResultList();
 	}
