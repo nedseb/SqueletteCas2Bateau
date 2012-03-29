@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 
 import fr.univaix.iut.cas2.dao.DAO;
 
-public class DAOGeneriqueJPA<T, ID> implements DAO<T, ID> {
+public abstract class DAOGeneriqueJPA<T, ID> implements DAO<T, ID> {
 
 	private Class<T> entityClass;
 	private String entityName = "";
