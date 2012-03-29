@@ -15,7 +15,7 @@ public class Bateau implements Serializable {
 	@GeneratedValue
 	private int idBateau;
 	private String nomBateau;
-    private int numeroSerie;
+    private String numeroSerie;
     private String assurance;
     
     @ManyToOne
@@ -42,11 +42,11 @@ public class Bateau implements Serializable {
 		this.nomBateau = nomBateau;
 	}
 
-	public int getNumeroSerie() {
+	public String getNumeroSerie() {
 		return numeroSerie;
 	}
 
-	public void setNumeroSerie(int numeroSerie) {
+	public void setNumeroSerie(String numeroSerie) {
 		this.numeroSerie = numeroSerie;
 	}
 
@@ -95,7 +95,8 @@ public class Bateau implements Serializable {
 		result = prime * result + idBateau;
 		result = prime * result
 				+ ((nomBateau == null) ? 0 : nomBateau.hashCode());
-		result = prime * result + numeroSerie;
+		result = prime * result
+				+ ((numeroSerie == null) ? 0 : numeroSerie.hashCode());
 		return result;
 	}
 
@@ -120,7 +121,10 @@ public class Bateau implements Serializable {
 				return false;
 		} else if (!nomBateau.equals(other.nomBateau))
 			return false;
-		if (numeroSerie != other.numeroSerie)
+		if (numeroSerie == null) {
+			if (other.numeroSerie != null)
+				return false;
+		} else if (!numeroSerie.equals(other.numeroSerie))
 			return false;
 		return true;
 	}
