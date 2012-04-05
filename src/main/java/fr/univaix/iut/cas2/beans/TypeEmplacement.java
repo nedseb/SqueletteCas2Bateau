@@ -15,7 +15,7 @@ public class TypeEmplacement implements Serializable {
 	private int idType;
 	private int longueur;
 	private int largeur;
-	private int pronfondeur;
+	private int profondeur;
 	
 	public TypeEmplacement() {
 	}
@@ -40,12 +40,12 @@ public class TypeEmplacement implements Serializable {
 		this.largeur = largeur;
 	}
 
-	public int getPronfondeur() {
-		return pronfondeur;
+	public int getProfondeur() {
+		return profondeur;
 	}
 
-	public void setPronfondeur(int pronfondeur) {
-		this.pronfondeur = pronfondeur;
+	public void setProfondeur(int profondeur) {
+		this.profondeur = profondeur;
 	}
 
 	public int getIdType() {
@@ -59,7 +59,7 @@ public class TypeEmplacement implements Serializable {
 		result = prime * result + idType;
 		result = prime * result + largeur;
 		result = prime * result + longueur;
-		result = prime * result + pronfondeur;
+		result = prime * result + profondeur;
 		return result;
 	}
 
@@ -78,7 +78,7 @@ public class TypeEmplacement implements Serializable {
 			return false;
 		if (longueur != other.longueur)
 			return false;
-		if (pronfondeur != other.pronfondeur)
+		if (profondeur != other.profondeur)
 			return false;
 		return true;
 	}
@@ -86,7 +86,7 @@ public class TypeEmplacement implements Serializable {
 	@Override
 	public String toString() {
 		return "TypeEmplacement [idType=" + idType + ", longueur=" + longueur
-				+ ", largeur=" + largeur + ", pronfondeur=" + pronfondeur + "]";
+				+ ", largeur=" + largeur + ", pronfondeur=" + profondeur + "]";
 	}
 	
 	
