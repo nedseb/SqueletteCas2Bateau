@@ -3,9 +3,11 @@ package fr.univaix.iut.cas2.beans;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@Entity
 public class EnAttente extends Bateau implements Serializable {
 	private static final long serialVersionUID = 4674296304879764376L;
 
